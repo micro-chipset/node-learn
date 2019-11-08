@@ -1,3 +1,6 @@
+var db = require('db');
+var log = require('logger')(module);
+
 var User = require('./user');
 
 function run() {
@@ -5,6 +8,7 @@ function run() {
     var petya = new User("Петя");
 
     vasya.hello(petya);
+    log(db.getPhrases("Run successful"))
 }
 
 if(module.parent) {
